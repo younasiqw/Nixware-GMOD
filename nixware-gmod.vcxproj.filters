@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="Interface.hpp" />
+    <ClInclude Include="sdk.hpp" />
+    <ClInclude Include="ISurface.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Entities.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="IPanel.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="color.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="fmath.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="lua.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.hpp" />
+    <ClInclude Include="Esp.hpp">
+      <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="Reset.hpp">
+      <Filter>Hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Nixware - Garry%27s Mod\Dll1\IClientMode.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="IBaseClient.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="IEngineTrace.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="drawmanager.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="pattern.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Netvars.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Net.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Nixware - Garry%27s Mod\Dll1\ModelInfo.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\imgui.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\imgui_impl_dx9.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\imgui_internal.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\stb_textedit.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\imconfig.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="particles.hpp">
+      <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="vmthook.hpp">
+      <Filter>Hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="Fonts.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="vars.hpp" />
+    <ClInclude Include="EndScene.hpp">
+      <Filter>Hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="PaintTraverse.hpp">
+      <Filter>Hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateMove.hpp">
+      <Filter>Hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\stb_rect_pack.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\stb_truetype.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="singleton.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Imgui\imgui.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Imgui\imgui_draw.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Imgui\imgui_impl_dx9.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="SDK">
+      <UniqueIdentifier>{b97145d5-fc4e-4541-8104-9a45339714ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hooks">
+      <UniqueIdentifier>{903d4aa5-68ad-4af0-a28e-792e81279393}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImGui">
+      <UniqueIdentifier>{93fb9ca3-e6af-461d-be60-82821d674c47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Features">
+      <UniqueIdentifier>{4316728a-f335-4a41-8539-1826c5b5eb3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{9bf55248-331e-4be3-acef-e13a4324befd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
