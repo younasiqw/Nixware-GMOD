@@ -29,4 +29,5 @@ bool IsKeyPressed(int iKey)
 #include "CInput.hpp"
 #include "IEngineTrace.hpp"
 #include "ModelInfo.hpp"
+#include "RenderView.hpp"
 #include "Singleton.hpp"

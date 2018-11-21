@@ -21,9 +21,9 @@
   <ItemGroup>
     <ClInclude Include="..\..\Nixware - Garry%27s Mod\Dll1\ModelInfo.hpp" />
     <ClInclude Include="CreateMove.hpp" />
+    <ClInclude Include="IClientMode.hpp" />
     <ClInclude Include="IEngineTrace.hpp" />
     <ClInclude Include="IBaseClient.hpp" />
-    <ClInclude Include="..\..\Nixware - Garry%27s Mod\Dll1\IClientMode.h" />
     <ClInclude Include="color.hpp" />
     <ClInclude Include="EndScene.hpp" />
     <ClInclude Include="Engine.hpp" />
@@ -39,6 +39,7 @@
     <ClInclude Include="Imgui\stb_textedit.h" />
     <ClInclude Include="Imgui\stb_truetype.h" />
     <ClInclude Include="menu.hpp" />
+    <ClInclude Include="RenderView.hpp" />
     <ClInclude Include="Reset.hpp" />
     <ClInclude Include="Interface.hpp" />
     <ClInclude Include="IPanel.hpp" />
@@ -50,6 +51,7 @@
     <ClInclude Include="particles.hpp" />
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="drawmanager.hpp" />
+    <ClInclude Include="SceneEnd.hpp" />
     <ClInclude Include="sdk.hpp" />
     <ClInclude Include="pattern.hpp" />
     <ClInclude Include="singleton.hpp" />

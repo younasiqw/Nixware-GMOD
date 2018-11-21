@@ -34,9 +34,6 @@
     <ClInclude Include="Reset.hpp">
       <Filter>Hooks</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Nixware - Garry%27s Mod\Dll1\IClientMode.h">
-      <Filter>SDK</Filter>
-    </ClInclude>
     <ClInclude Include="IBaseClient.hpp">
       <Filter>SDK</Filter>
     </ClInclude>
@@ -99,6 +96,15 @@
       <Filter>ImGui</Filter>
     </ClInclude>
     <ClInclude Include="singleton.hpp" />
+    <ClInclude Include="IClientMode.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderView.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneEnd.hpp">
+      <Filter>Hooks</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

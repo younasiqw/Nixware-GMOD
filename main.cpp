@@ -13,9 +13,11 @@
 #include "EndScene.hpp"
 #include "Reset.hpp"
 #include "CreateMove.hpp"
+#include "SceneEnd.hpp"
 
 vfunc_hook ppanel;
-vfunc_hook direct3d_hook;
+vfunc_hook renderview;
+vfunc_hook d3d;
 vfunc_hook client;
 
 uint64_t FindSignature(const char* szModule, const char* szSignature)
@@ -78,6 +80,7 @@ unsigned long __stdcall init(void* dll)
 	globals::client = interface::get<IBaseClientDLL>(GetModuleHandleW(L"client.dll"), "VClient017");
 	globals::trace = interface::get<IEngineTrace>(GetModuleHandleW(L"engine.dll"), "EngineTraceClient003");
 	globals::modelinfo = interface::get<IVModelInfo>(GetModuleHandleW(L"engine.dll"), "VModelInfoClient006");
+	globals::renderview = interface::get<RenderView>(GetModuleHandleW(L"engine.dll"), "VEngineRenderView014");
 
 	globals::pDevice = **(IDirect3DDevice9***)(FindSignature("shaderapidx9.dll", "A1 ? ? ? ? 50 8B 08 FF 51 0C") + 1);
 
@@ -88,6 +91,7 @@ unsigned long __stdcall init(void* dll)
 	printf("globals::client: 0x%X\n", (DWORD)globals::client);
 	printf("globals::trace: 0x%X\n", (DWORD)globals::trace);
 	printf("globals::modelinfo: 0x%X\n", (DWORD)globals::modelinfo);
+	printf("globals::renderview: 0x%X\n", (DWORD)globals::renderview);
 	printf("globals::pDevice: 0x%X\n", (DWORD)globals::pDevice);
 	globals::engine->get_screen_size(globals::screenweight, globals::screenheight);
 
@@ -110,16 +114,24 @@ unsigned long __stdcall init(void* dll)
 	}
 
 	// EndScene & Reset Hook
-	if (direct3d_hook.setup(globals::pDevice)) {
-		original::endscene = direct3d_hook.get_original<EndSceneFn>(42);
+	if (d3d.setup(globals::pDevice)) {
+		original::endscene = d3d.get_original<EndSceneFn>(42);
 		printf("Original EndScene founded \n");
-		direct3d_hook.hook_index(42, hkEndScene);
+		d3d.hook_index(42, hkEndScene);
 		printf("EndScene hooked \n");
 
-		original::reset = direct3d_hook.get_original<ResetFn>(16);
+		original::reset = d3d.get_original<ResetFn>(16);
 		printf("Original Reset founded \n");
-		direct3d_hook.hook_index(16, hkReset);
+		d3d.hook_index(16, hkReset);
 		printf("Reset hooked \n");
+	}
+
+	// SceneEnd hook
+	if (renderview.setup(globals::renderview)) {
+		original::sceneend = renderview.get_original<tSceneEnd>(9);
+		printf("Original SceneEnd founded \n");
+		renderview.hook_index(9, hkSceneEnd);
+		printf("SceneEnd hooked \n");
 	}
 
 	// CreateMove Hook
@@ -142,7 +154,7 @@ unsigned long __stdcall init(void* dll)
 
 	SetWindowLongPtrW(FindWindowW(L"Valve001", nullptr), GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(original::proc));
 
-	direct3d_hook.unhook_all();
+	d3d.unhook_all();
 	ppanel.unhook_all();
 	client.unhook_all();
 
